@@ -67,18 +67,20 @@ export const createUseRoutes = (configRoutes: IRouter[], parentPath = '/'): Rout
  * @param routes  RouteObject[] 经过 createUseRoutes 处理后的routes
  * @returns IPathKeyRouteObject
  */
-// export const pathKeyCreateUseRoutes = (routes: RouteObject[]): IPathKeyRouteObject => {
-//   let jsonItems: IPathKeyRouteObject = {}
-//   for (let index = 0; index < routes.length; index++) {
-//     const item: RouteObject = routes[index]
-//     jsonItems[item.path || ''] = {...item}
-//
-//     if (item.children) {
-//       jsonItems = merge(jsonItems, pathKeyCreateUseRoutes(item.children))
-//     }
-//   }
-//   return jsonItems
-// };
+export const pathKeyCreateUseRoutes = (routes: RouteObject[]): IPathKeyRouteObject => {
+  let jsonItems: IPathKeyRouteObject = {}
+  for (let index = 0; index < routes.length; index++) {
+    const item: RouteObject = routes[index]
+    jsonItems[item.path || ''] = {
+      ...item
+    }
+
+    if (item.children) {
+      jsonItems = merge(jsonItems, pathKeyCreateUseRoutes(item.children))
+    }
+  }
+  return jsonItems
+};
 
 /**
  * 根据 routes: IRouter[] 重置
