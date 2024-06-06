@@ -1,4 +1,5 @@
-import {RouteObject} from "react-router-dom";
+import {BrowserRouterProps, RouteObject} from "react-router-dom";
+import React from "react";
 
 /**
  * json path key RouteObject路由类型
