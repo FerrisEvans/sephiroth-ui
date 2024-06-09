@@ -1,7 +1,9 @@
+import Routes from "@/routes";
+
 function App() {
   return (
     <>
-      wwww
+      <Routes></Routes>
     </>
   )
 }
