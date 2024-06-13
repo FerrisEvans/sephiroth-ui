@@ -223,3 +223,6 @@ dist-ssr
 
 # production
 **/build
+
+# vite 打包分析产物
+stats.html
