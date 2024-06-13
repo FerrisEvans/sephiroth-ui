@@ -19,4 +19,15 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'auto',
+  overrides: [
+    {
+      files: '*rc',
+      options: {
+        parser: 'json'
+      }
+    }
+  ],
+  'plugins': [
+    'prettier-plugin-tailwindcss'
+  ]
 };
