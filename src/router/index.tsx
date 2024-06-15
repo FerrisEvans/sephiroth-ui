@@ -3,6 +3,8 @@ import Dashboard from "@/pages/Dashboard.tsx";
 import User from "@/pages/User.tsx";
 import Blog from "@/pages/Blog.tsx";
 import Page404 from "@/pages/Page404.tsx";
+import ReactQuery from "@/pages/test/ReactQuery.tsx";
+import Zustand from "@/pages/test/Zustand.tsx";
 
 const Router = () => {
   return useRoutes([
@@ -29,7 +31,11 @@ const Router = () => {
     },
     {
       path: '/test',
-      children: []
+      children: [
+        { element: <Navigate to="/test/zustand" />, index: true },
+        { path: 'zustand', element: <Zustand /> },
+        { path: 'react-query', element: <ReactQuery /> },
+      ]
     },
     {
       path: '/login',
