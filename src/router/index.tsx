@@ -5,6 +5,7 @@ import Blog from "@/pages/Blog.tsx";
 import Page404 from "@/pages/Page404.tsx";
 import ReactQuery from "@/pages/test/ReactQuery.tsx";
 import Zustand from "@/pages/test/Zustand.tsx";
+import Login from '@/views/Login'
 
 const Router = () => {
   return useRoutes([
@@ -39,7 +40,7 @@ const Router = () => {
     },
     {
       path: '/login',
-      element: <Page404 />
+      element: <Login />
     },
     {
       path: '*',
