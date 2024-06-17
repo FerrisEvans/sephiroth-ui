@@ -1,4 +1,4 @@
-import {createContext, ReactNode, useContext, useMemo, useState} from "react";
+import React, {createContext, ReactNode, useContext, useMemo, useState} from "react"
 
 export enum LoginState {
   LOGIN,
@@ -20,7 +20,7 @@ const LoginStateContext = createContext<LoginStateContextType>({
   },
   backToLogin: () => {
   },
-});
+})
 
 export const useLoginStateContext = () => {
   return useContext(LoginStateContext)
