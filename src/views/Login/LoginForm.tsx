@@ -4,7 +4,7 @@ import {AiFillGithub, AiFillGoogleCircle, AiFillWechat} from "react-icons/ai";
 
 const LoginForm = () => {
   const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
+    console.log('Received values of form: ', values)
   }
 
 
