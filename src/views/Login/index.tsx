@@ -1,3 +1,10 @@
+import {LoginStateProvider} from "@/views/Login/useLogin.tsx"
+import LoginForm from "@/views/Login/LoginForm.tsx"
+import MobileForm from "@/views/Login/MobileForm.tsx"
+import QrCodeForm from "@/views/Login/QrCodeForm.tsx"
+import RegisterForm from "@/views/Login/RegisterForm.tsx"
+import ResetForm from "@/views/Login/ResetForm.tsx"
+
 const Login = () => {
   return (
     <>
@@ -16,8 +23,15 @@ const Login = () => {
           <div className="flex flex-row gap-[16px] text-2xl">开箱即用的中后台管理系统</div>
         </div>
 
-        <div className="mx-auto flex w-full !min-w-[400px] max-w-[480px] flex-col px-[16px] py-[120px] lg:px-[64px] lg:py-[240px]">
-          666
+        <div
+          className="mx-auto flex w-full !min-w-[400px] max-w-[480px] flex-col px-[16px] py-[120px] lg:px-[64px] lg:py-[240px]">
+          <LoginStateProvider>
+            <LoginForm/>
+            <MobileForm />
+            <QrCodeForm />
+            <RegisterForm />
+            <ResetForm />
+          </LoginStateProvider>
         </div>
       </main>
     </>
