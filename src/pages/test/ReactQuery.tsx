@@ -107,7 +107,7 @@ const ReactQuery = () => {
         {
           todos?.map((todo) => (
             <li
-              className="m-2 flex items-center rounded-sm border border-blue-700 p-2"
+              className="border-blue-700 m-2 flex items-center rounded-sm border border-blue-700 p-2"
               key={todo.id}
             >
               <div className="w-12 p-2">
