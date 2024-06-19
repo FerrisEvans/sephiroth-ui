@@ -35,6 +35,7 @@ export default defineConfig({
   server: {
     // 自动打开浏览器
     open: false,
+    port: 3000,
     proxy: {
       '/api': {
         target: 'https://xxxxxx',
