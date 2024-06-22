@@ -26,7 +26,7 @@ const SvgIcon = ({icon, prefix = 'icon', color = 'currentColor', size = '1em', c
       className={`anticon fill-current inline-block h-[1em] w-[1em] overflow-hidden outline-none ${className}`}
       style={svgStyle}
     >
-      <use xlinkHref={symbolId} fill="currentColor" />
+      <use xlinkHref={symbolId} fill="currentColor"/>
     </svg>
   )
 }

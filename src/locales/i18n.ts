@@ -2,9 +2,15 @@ import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
-import en from './en_US'
-import zh from './zh_CN'
+import { getStringItem } from '@/utils/storage'
 
+import en_US from './en_US'
+import zh_CN from './zh_CN'
+import {LocaleEnum, StorageEnum} from "@/types/enum.ts";
+
+
+
+const defaultLng = getStringItem(StorageEnum.I18N) || (LocaleEnum.en_US as string)
 i18n
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
@@ -15,14 +21,16 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     debug: true,
-    fallbackLng: 'en',
+    lng: defaultLng, // localstorage -> i18nextLng: en_US
+    fallbackLng: LocaleEnum.en_US,
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      en: { translation: en, },
-      zh: { translation: zh, },
+      en_US: { translation: en_US },
+      zh_CN: { translation: zh_CN },
     },
   })
 
-export default i18n
+export default i18n;
+export const { t } = i18n;

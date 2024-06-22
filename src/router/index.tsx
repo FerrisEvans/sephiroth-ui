@@ -13,7 +13,7 @@ const Router = () => {
       path: '/',
       children: [
         {
-          element: <Navigate to={'/dashboard'} />,
+          element: <Navigate to={'/login'} />,
           index: true
         },
         {

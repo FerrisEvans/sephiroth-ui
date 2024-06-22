@@ -16,8 +16,8 @@ const LocalePicker = () => {
       key: item.locale,
       label: item.label,
       icon: <SvgIcon icon={item.icon} size="20" className="rounded-md" />,
-    };
-  });
+    }
+  })
 
   return (
     <Dropdown
@@ -30,7 +30,7 @@ const LocalePicker = () => {
         <SvgIcon icon={`ic-locale_${locale}`} size="24" className="rounded-md" />
       </IconButton>
     </Dropdown>
-  );
+  )
 }
 
 export default LocalePicker

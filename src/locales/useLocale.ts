@@ -36,9 +36,9 @@ const useLocale = () => {
    */
   const setLocale = (locale: Locale) => {
     i18n.changeLanguage(locale)
-  };
+  }
 
-  const locale = (i18n.resolvedLanguage || LocaleEnum.en_US) as Locale;
+  const locale = (i18n.resolvedLanguage || LocaleEnum.en_US) as Locale
 
   const language = LANGUAGE_MAP[locale]
 
