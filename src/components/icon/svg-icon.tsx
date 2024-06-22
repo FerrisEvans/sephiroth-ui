@@ -18,7 +18,7 @@ const SvgIcon = ({icon, prefix = 'icon', color = 'currentColor', size = '1em', c
     color,
     ...style,
   }
-  console.log('symbolId', symbolId)
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
