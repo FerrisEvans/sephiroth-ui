@@ -10,7 +10,7 @@ interface SvgIconProps {
 }
 
 const SvgIcon = ({icon, prefix = 'icon', color = 'currentColor', size = '1em', className = '', style = {}, }: SvgIconProps) => {
-  const symbolId = `#${prefix}-${icon}`
+  const symbolId = `@/assets/icons/${prefix}-${icon}.svg`
   const svgStyle: CSSProperties = {
     verticalAlign: 'middle',
     width: size,
@@ -18,7 +18,7 @@ const SvgIcon = ({icon, prefix = 'icon', color = 'currentColor', size = '1em', c
     color,
     ...style,
   }
-
+  console.log('symbolId', symbolId)
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ const SvgIcon = ({icon, prefix = 'icon', color = 'currentColor', size = '1em', c
       className={`anticon fill-current inline-block h-[1em] w-[1em] overflow-hidden outline-none ${className}`}
       style={svgStyle}
     >
-      <use xlinkHref={symbolId} fill="currentColor" />
+      <use xlinkHref={symbolId} fill="currentColor"/>
     </svg>
   )
 }
