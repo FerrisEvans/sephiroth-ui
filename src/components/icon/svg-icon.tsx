@@ -10,7 +10,7 @@ interface SvgIconProps {
 }
 
 const SvgIcon = ({icon, prefix = 'icon', color = 'currentColor', size = '1em', className = '', style = {}, }: SvgIconProps) => {
-  const symbolId = `@/assets/icons/${prefix}-${icon}.svg`
+  const symbolId = `#${prefix}-${icon}`
   const svgStyle: CSSProperties = {
     verticalAlign: 'middle',
     width: size,
