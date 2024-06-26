@@ -31,7 +31,7 @@ export interface RouteMeta {
    */
   disabled?: boolean
   /**
-   * react router outlet
+   * react routes outlet
    */
   outlet?: any
   /**

@@ -4,7 +4,7 @@ import { theme } from './theme/antd/theme'
 import './theme/index.css'
 import {ConfigProvider} from "antd";
 import {StyleProvider} from "@ant-design/cssinjs";
-import Router from "@/router";
+import Router from "@/routes";
 
 export default memo(() => {
 
