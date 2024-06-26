@@ -25,7 +25,7 @@ const ResetForm = () => {
         <p className="mb-4 h-14 text-center text-gray">{t('sys.login.forgetFormSecondTitle')}</p>
         <Form.Item
           name="email"
-          rules={[{required: true, message: t('sys.login.emaildPlaceholder')}]}
+          rules={[{required: true, message: t('sys.login.emailPlaceholder')}]}
         >
           <Input placeholder={t('sys.login.email')}/>
         </Form.Item>
