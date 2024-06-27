@@ -17,17 +17,36 @@ const Routes = () => {
       path: '/',
       element: <AuthenticatedRoute/>,
       children: [
-        {path: 'dashboard', element: <Dashboard/>, index: true},
-        {path: 'user', element: <User/>},
-        {path: 'blog', element: <Blog/>},
+        {
+          path: 'dashboard',
+          element: <Dashboard/>,
+          index: true
+        },
+        {
+          path: 'user',
+          element: <User/>
+        },
+        {
+          path: 'blog',
+          element: <Blog/>
+        },
       ],
     },
     {
       path: '/test',
       children: [
-        {element: <Navigate to="/test/zustand"/>, index: true},
-        {path: 'zustand', element: <Zustand/>},
-        {path: 'react-query', element: <ReactQuery/>},
+        {
+          element: <Navigate to="/test/zustand"/>,
+          index: true
+        },
+        {
+          path: 'zustand',
+          element: <Zustand/>
+        },
+        {
+          path: 'react-query',
+          element: <ReactQuery/>
+        },
       ],
     },
     {

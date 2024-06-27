@@ -26,7 +26,11 @@ export default {
       yellow: '#ffc82c',
       gray: '#637381',
     },
-    extend: {},
+    extend: {
+      transitionProperty: {
+        height: 'height',
+      },
+    },
   },
   // corePlugins: {
   //   preflight: false,
