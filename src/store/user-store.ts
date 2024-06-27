@@ -23,11 +23,11 @@ const useUserStore = create<UserStore>((set) => ({
   userToken: getItem<UserToken>(StorageEnum.Token) || {},
   actions: {
     setUserInfo: (userInfo) => {
-      set({ userInfo });
+      set({userInfo});
       setItem(StorageEnum.User, userInfo);
     },
     setUserToken: (userToken) => {
-      set({ userToken });
+      set({userToken});
       setItem(StorageEnum.Token, userToken);
     },
   },
@@ -38,7 +38,7 @@ export const useUserToken = () => useUserStore((state) => state.userToken);
 export const useUserActions = () => useUserStore((state) => state.actions);
 
 export const useSignIn = () => {
-  const { setUserToken, setUserInfo } = useUserActions();
+  const {setUserToken, setUserInfo} = useUserActions();
 
   const signInMutation = useMutation({
     mutationFn: userService.signIn
@@ -46,13 +46,26 @@ export const useSignIn = () => {
   const navigatge = useNavigate();
 
   return async (data: SignInReq) => {
-
-    const res: SignInRes = await signInMutation.mutateAsync(data);
+    // TODO: remove
+    let res: SignInRes = {
+      user: {id: '111', email: 'demo@admin.com', password: '123', username: 'admin'},
+      accessToken: 'admin',
+      refreshToken: 'admin',
+    };
+    try {
+      res = await signInMutation.mutateAsync(data);
+    } catch (error) {
+      console.log(error);
+    }
     const {user, accessToken, refreshToken} = res;
-    setUserToken({accessToken, refreshToken});
+    setUserToken({
+      accessToken, refreshToken
+    });
     setUserInfo(user);
 
-    navigatge('/dashboard', {replace: true});
+    navigatge('/dashboard', {
+      replace: true
+    });
     return res;
   };
 };

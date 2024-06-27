@@ -5,8 +5,6 @@ import Routes from "@/routes";
 export default memo(() => {
 
   return (
-    <div className="h-full w-full">
-      <Routes/>
-    </div>
+    <Routes/>
   )
 })
